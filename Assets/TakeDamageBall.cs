@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TakeDamageBall : PlayerControl
 {
+    [SerializeField] float Dmg;
     [SerializeField] AIEnemy En;
     void Start()
     {
@@ -20,12 +21,13 @@ public class TakeDamageBall : PlayerControl
         var target = collision.gameObject.GetComponent<AIEnemy>();
         if (target!=null)
         {
-            target.TakePoison(Damage, 1);
+            target.TakePoison(Dmg, 1f);
         }
+       
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("i exit" + collision.gameObject.name);
+
     }
     public override void TakeDamage(float _damage)
     {

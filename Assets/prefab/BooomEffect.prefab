@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 886031686661265076}
   - component: {fileID: 886031686661265077}
   - component: {fileID: 2958581357618961943}
-  - component: {fileID: 3639210406009549004}
+  - component: {fileID: 1962552719911611927}
   m_Layer: 0
   m_Name: BooomEffect
   m_TagString: Untagged
@@ -27,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 886031686661265075}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &886031686661265076
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -42,7 +42,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 886031686661265075}
   serializedVersion: 7
-  lengthInSec: 0.2
+  lengthInSec: 0.1
   simulationSpeed: 1
   stopAction: 2
   cullingMode: 0
@@ -668,7 +668,7 @@ ParticleSystem:
     radiusThickness: 0.88
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
-    m_Rotation: {x: 90, y: 0, z: 0}
+    m_Rotation: {x: 0, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
@@ -1305,7 +1305,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0.13743854, b: 0, a: 1}
+        key0: {r: 1, g: 0, b: 0.03518915, a: 1}
         key1: {r: 0.21698111, g: 0.111561045, b: 0.111561045, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 1, g: 1, b: 1, a: 0}
@@ -4813,7 +4813,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 886031686661265075}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -4822,7 +4822,7 @@ CircleCollider2D:
   m_Offset: {x: -0.07987583, y: -0.00000000879095}
   serializedVersion: 2
   m_Radius: 2.4071813
---- !u!114 &3639210406009549004
+--- !u!114 &1962552719911611927
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4831,17 +4831,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 886031686661265075}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fe4c931bd8f14b4693bd8a6a4c9f3e0, type: 3}
+  m_Script: {fileID: 11500000, guid: a6879157a41962a4397ce63414b2528f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 0
-  Speed: 0
-  enemy: {fileID: 0}
-  Anim: {fileID: 0}
-  sprite: {fileID: 0}
-  edge: {fileID: 0}
-  Damage: 0.05
-  on: {fileID: 0}
-  HPBarPrefab: {fileID: 0}
-  posHP: {fileID: 0}
-  En: {fileID: 0}
+  TimeTick: 0.1
+  Damage: 0

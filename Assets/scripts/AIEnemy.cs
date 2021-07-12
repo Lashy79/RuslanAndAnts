@@ -124,27 +124,11 @@ public class AIEnemy : Creature
 
     public override void Die()
     {
-        Instantiate(Bomb, this.transform.position, new Quaternion());
+        Instantiate(Bomb, this.transform.position, Quaternion.identity);
         PlayerControl.player.RemoveEnemyOnDie(this);
         base.Die();
        
         Destroy(bar.gameObject);
     }
-    public void TakePoison (float _damage, float _time)
-    {
-        StartCoroutine(TickPoison(_damage, _time));
-    }
-    public float TimeTick;
-    private IEnumerator TickPoison (float _damage, float _time)
-    {
-        Debug.Log("poison start");
-        while(_time >0)
-        {
-            _time -= TimeTick;
-            Debug.Log("poison Tick");
-            TakeDamage(_damage);
-            yield return new WaitForSeconds(TimeTick);
-        }
-        Debug.Log("Tick End");
-    }
+ 
 }

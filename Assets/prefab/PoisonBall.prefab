@@ -4835,11 +4835,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 0
+  TimeTick: 0
   Speed: 0
   enemy: {fileID: 0}
   Anim: {fileID: 0}
   sprite: {fileID: 0}
   edge: {fileID: 0}
-  Damage: 0.05
+  Damage: 0
   on: {fileID: 0}
+  HPBarPrefab: {fileID: 0}
+  posHP: {fileID: 0}
+  Dmg: 0.01
   En: {fileID: 0}

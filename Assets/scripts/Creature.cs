@@ -31,5 +31,22 @@ public class Creature : MonoBehaviour
        
         Destroy(gameObject);
     }
+    public void TakePoison(float _damage, float _time)
+    {
+        StartCoroutine(TickPoison(_damage, _time));
+    }
+    public float TimeTick= 0.1f;
+    private IEnumerator TickPoison(float _damage, float _time)
+    {
+        Debug.Log("poison start");
+        while (_time > 0)
+        {
+            _time -= TimeTick;
+            Debug.Log("poison Tick");
+            TakeDamage(_damage);
+            yield return new WaitForSeconds(TimeTick);
+        }
+        Debug.Log("Tick End");
+    }
 }
 

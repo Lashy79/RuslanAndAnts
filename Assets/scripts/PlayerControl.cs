@@ -46,7 +46,7 @@ public class PlayerControl : Creature
             EnemyList.Add(target);
         }
 
-        Debug.Log("frgrtyhrRgergretrdtfgert");
+
         //if (Input.GetKeyDown(KeyCode.Mouse0))
         //{
         //    var target = collision.gameObject.GetComponent<AIEnemy>();
@@ -59,12 +59,17 @@ public class PlayerControl : Creature
         //    }
         //}
     }
-   
+    public override void Die()
+    {
+        base.Die();
+
+        Destroy(Bar.gameObject);
+    }
     private void OnTriggerExit2D(Collider2D collision)
     {
         var target = collision.gameObject.GetComponent<AIEnemy>();
         EnemyListDestroy.Add(target);
-        Debug.Log(" i exit");
+      
     }
     
     public void RemoveEnemyOnDie(AIEnemy enemy)
@@ -74,6 +79,7 @@ public class PlayerControl : Creature
     }
     void Update()
     {
+        Bar.fillAmount = HP;
         foreach (var enemy in EnemyListDestroy)
         {
             EnemyList.Remove(enemy);

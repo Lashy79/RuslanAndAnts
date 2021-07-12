@@ -13,17 +13,24 @@ public class BombLogic : MonoBehaviour
     {
       ran = Random.Range(Minran, Maxran);
       Destroy(this.gameObject,ran);
+        StartCoroutine(Boooom()) ;
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-        if (Time.deltaTime < Maxran )
+       if (Maxran < 1)
         {
-            Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-            Instantiate(Booom, this.transform.position, new Quaternion());
+
         }
+       
+    }
+    
+    private IEnumerator Boooom()
+    {
+        yield return new WaitForSeconds(ran-0.1f);
+        Instantiate(Booom, this.transform.position, Quaternion.identity);
+  
     }
     
 }
